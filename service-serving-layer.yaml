@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-serving-layer
+  labels:
+    app: service-serving-layer
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: service-serving-layer
+  template:
+    metadata:
+      labels:
+        app: service-serving-layer
+    spec:
+      containers:
+      - name: service-serving-layer
+        image: juliankrieger/service-serving-layer:latest
+        ports:
+        - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-serving-layer-service
+spec:
+  selector:
+    app: service-serving-layer
+  type: LoadBalancer  
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+      nodePort: 31113
