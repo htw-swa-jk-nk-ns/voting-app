@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-raw-data
+  labels:
+    app: service-raw-data
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: service-raw-data
+  template:
+    metadata:
+      labels:
+        app: service-raw-data
+    spec:
+      containers:
+        - name: service-raw-data
+          image: babos77/sa-service-raw-data:latest
+          ports:
+            - containerPort: 8889
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-raw-data
+spec:
+  selector:
+    app: service-raw-data
+  ports:
+    - protocol: TCP
+      port: 8889
+      targetPort: 8889

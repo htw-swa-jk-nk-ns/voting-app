@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-calculate
+  labels:
+    app: service-calculate
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: service-calculate
+  template:
+    metadata:
+      labels:
+        app: service-calculate
+    spec:
+      containers:
+        - name: service-calculate
+          image: babos77/sa-service-calculate:latest
+          ports:
+            - containerPort: 8889
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-calculate
+spec:
+  selector:
+    app: service-calculate
+  ports:
+    - protocol: TCP
+      port: 8889
+      targetPort: 8889
