@@ -4,6 +4,7 @@ metadata:
   name: service-frontend-voting
   labels:
     app: service-frontend-voting
+    role: app
 spec:
   replicas: 4
   selector:
