@@ -44,6 +44,8 @@
 
 `kubectl edit deployment nginx-depl`
 
+`kubectl delete -f service-calculate.yaml`
+
 ### debugging
 
 `kubectl logs {pod-name}`
