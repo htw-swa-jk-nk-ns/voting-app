@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-frontend-voting-service
+  name: service-frontend-voting
 spec:
   selector:
     app: service-frontend-voting
