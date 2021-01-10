@@ -19,6 +19,7 @@ spec:
         image: starax/service-frontend-analysis:latest
         ports:
         - containerPort: 80
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service

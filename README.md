@@ -1,3 +1,9 @@
+### debug
+## Curl into cluster with nslookup and curl preinstalled
+    
+`kubectl run curl --image=radial/busyboxplus:curl -i --tty`
+`nslookup service-frontend-voting-service`
+
 ### install hyperhit and minikube
 
 `brew update`
