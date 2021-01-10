@@ -6,7 +6,7 @@ metadata:
     app: service-frontend-voting
     role: app
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: service-frontend-voting
@@ -20,6 +20,7 @@ spec:
         image: starax/service-frontend-voting:latest
         ports:
         - containerPort: 8080
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
