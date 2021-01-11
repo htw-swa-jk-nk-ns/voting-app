@@ -1,8 +1,16 @@
-### debug
-## Curl into cluster with nslookup and curl preinstalled
-    
+## debug
+### Curl into cluster with nslookup and curl preinstalled
+Run debug deployment with nslookup, ping etc. installed
+ 
 `kubectl run curl --image=radial/busyboxplus:curl -i --tty`
+
+Check if cluster-dns-server has entry about service
+
 `nslookup service-frontend-voting-service`
+
+See complete history of pulling images, creating pods etc.
+
+`kubectl get events`
 
 ### install hyperhit and minikube
 
