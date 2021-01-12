@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: raw-data-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: raw-data.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: service-raw-data
+              port: 
+                number: 8889
+        - path: /voting
+          pathType: Prefix
+          backend:
+            service:
+              name: service-frontend-voting-settings
+              port: 
+                number: 8080
