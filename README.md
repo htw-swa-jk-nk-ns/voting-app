@@ -1,4 +1,7 @@
-## debug
+# Kubernetes Cheat Sheet (WIP)
+
+## Debug
+
 ### Curl into cluster with nslookup and curl preinstalled
 Run debug deployment with nslookup, ping etc. installed
  
@@ -11,6 +14,26 @@ Check if cluster-dns-server has entry about service
 See complete history of pulling images, creating pods etc.
 
 `kubectl get events`
+
+## Ingress
+
+### install ingress
+
+`minikube addons enable ingress`
+
+`kubectl get ingress`
+
+Add the listed ip for the given Ingress-Endpoint to your host file:
+
+`sudo vim /etc/hosts` as
+
+`YOUR_IP  voting-app.com`
+
+### Add host name
+
+`sudo vim etc/hosts`
+
+## Kubernetes
 
 ### install hyperhit and minikube
 
