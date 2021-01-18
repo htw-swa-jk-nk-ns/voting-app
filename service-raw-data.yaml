@@ -27,7 +27,9 @@ metadata:
 spec:
   selector:
     app: service-raw-data
+  type: LoadBalancer  
   ports:
     - protocol: TCP
       port: 8889
       targetPort: 8889
+      nodePort: 31117
