@@ -23,6 +23,12 @@ See complete history of pulling images, creating pods etc.
 
 `kubectl get ingress`
 
+Add the listed ip for the given Ingress-Endpoint to your host file:
+
+`sudo vim /etc/hosts` as
+
+`YOUR_IP  voting-app.com`
+
 ### Add host name
 
 `sudo vim etc/hosts`
