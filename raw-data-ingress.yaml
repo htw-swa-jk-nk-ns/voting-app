@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: raw-data.com
+  - host: voting-app.com
     http:
       paths:
         - path: /
@@ -16,10 +16,3 @@ spec:
               name: service-raw-data
               port: 
                 number: 8889
-        - path: /voting
-          pathType: Prefix
-          backend:
-            service:
-              name: service-frontend-voting-settings
-              port: 
-                number: 8080
