@@ -1,0 +1,1 @@
+curl -XPOST -H "Content-type: application/json" -d '{"Vote":{"name":"AlbertEinstein","candidate":"Red","country":"Deutschland","date":"1611051908741"}}' 'service-serving-layer:8080/vote'
